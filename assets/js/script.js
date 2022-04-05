@@ -1,3 +1,4 @@
+// Store our excuse history. This will be used in local storage for persistence later
 var excuseHistory = [];
 
 // Fetch a randomly generated excuse
