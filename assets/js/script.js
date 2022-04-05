@@ -30,5 +30,3 @@ var getDay = function() {
 var getDate = function() {
     return moment().format('L');
 }
-
-getExcuse();
