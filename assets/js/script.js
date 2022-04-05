@@ -23,7 +23,7 @@ var addToHistory = function(id, excuse) {
 
 // Get weekday to display in the header
 var getWeekDay = function() {
-    var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];    const d = new Date();
+    var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     var weekValue = new Date();
     var weekDay = daysOfWeek[weekValue.getDay()];
     document.getElementById("weekday").innerHTML = weekDay;
