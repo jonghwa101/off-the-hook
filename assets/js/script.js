@@ -19,7 +19,16 @@ var addToHistory = function(id, excuse) {
         id: id,
         excuse: excuse
     })
-    console.log(excuseHistory);
+}
+
+// Use moment to get the day to display in the header
+var getDay = function() {
+    return moment().format('dddd');
+}
+
+// Use moment to get the date to display in the header
+var getDate = function() {
+    return moment().format('L');
 }
 
 getExcuse();
