@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <header>
+    <header class="jumbotron">
         <h1>Off the Hook</h1>
         <div>
             <h3 id="weekday"></h3>
@@ -20,10 +20,30 @@
 
     <main class="container" id="time-container">
         <div class="row">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text hour">9:00AM</div>
+              </div>
+              <textarea class="form-control" id="9"></textarea>
+              <button type="button" class="Btn">Excuse!</button>
+            </div>
+          </div>   
+
+          <div class="row">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <div class="input-group-text hour">10:00AM</div>
+              </div>
+              <textarea class="form-control" id="10"></textarea>
+              <button type="button" class="Btn">Excuse!</button>
+            </div>
+          </div>   
+        
+        <!-- <div class="row">
             <p>Time</p>
             <p>Excuse</p>
-            <button>Excuse!</button>
-        </div>
+            <button type="button" class="Btn">Excuse!</button>
+        </div> -->
     </main>
 
     <div id="history">

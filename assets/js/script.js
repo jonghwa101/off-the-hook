@@ -21,15 +21,15 @@ var addToHistory = function(id, excuse) {
     })
 }
 
-// Use moment to get the weekday to display in the header
+// Get weekday to display in the header
 var getWeekDay = function() {
-    var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];    const d = new Date();
+    var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     var weekValue = new Date();
     var weekDay = daysOfWeek[weekValue.getDay()];
     document.getElementById("weekday").innerHTML = weekDay;
 }
 
-// Use moment to get the day to display in the header
+// Get day to display in the header
 var getDay = function() {
     var thisDate = new Date().getDate();
     var thisMonth = new Date().getMonth() + 1;

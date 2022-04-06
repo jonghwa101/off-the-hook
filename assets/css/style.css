@@ -1,0 +1,22 @@
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    border-radius: 0;
+    border-bottom: 10px solid black;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+.Btn {
+    border-left: 1px solid black;
+    border-radius: 10px;
+    background-color: pink;
+}
+
+.Btn:hover {
+    font-size: 30px;
+    transition: all .3s ease-in-out;
+}
