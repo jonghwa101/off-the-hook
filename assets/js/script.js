@@ -1,6 +1,3 @@
-const API_KEY = "AIzaSyCUlFccIY7gcCGhO1jSDyWso05YVFv3HzU";
-const CLIENT_ID = "1015448963300-p75asfhkkfg7aq47p83pr4u3eqsk3hem.apps.googleusercontent.com";
-
 // Store our excuse history. This will be used in local storage for persistence later
 var excuseHistory = [];
 
