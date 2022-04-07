@@ -4,6 +4,8 @@ const CLIENT_ID = "1015448963300-p75asfhkkfg7aq47p83pr4u3eqsk3hem.apps.googleuse
 // Store our excuse history. This will be used in local storage for persistence later
 var excuseHistory = [];
 
+var timeContainerEl = document.querySelector("#time-container");
+
 // Fetch a randomly generated excuse
 var getExcuse = function() {
     fetch("https://excuser.herokuapp.com/v1/excuse").then(function(response) {
@@ -21,6 +23,20 @@ var addToHistory = function(id, excuse) {
     excuseHistory.push({
         id: id,
         excuse: excuse
+    })
+}
+
+// Use imgflip API to get a randomly generated meme
+var getMeme = function() {
+    fetch("https://api.imgflip.com/get_memes").then(function(response) {
+        if(response.ok) {
+            response.json().then(function(data) {
+                console.log(data);
+                var meme = data.data.memes[Math.floor(Math.random() * 100)];
+                var memeImgEl = document.createElement("img");
+                memeImgEl.setAttribute("src", meme.url);
+            })
+        }
     })
 }
 
@@ -43,3 +59,4 @@ var getDay = function() {
 getWeekDay();
 getDay();
 getExcuse();
+getMeme();
