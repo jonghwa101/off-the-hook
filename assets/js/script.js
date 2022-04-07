@@ -1,7 +1,8 @@
 // Store our excuse history. This will be used in local storage for persistence later
 var excuseHistory = [];
 
-var timeContainerEl = document.querySelector("#time-container");
+var memeImgEl = document.querySelector(".meme");
+var excuseButtonEl = document.querySelector("#excuse-btn");
 
 // Fetch a randomly generated excuse
 var getExcuse = function() {
@@ -28,9 +29,8 @@ var getMeme = function() {
     fetch("https://api.imgflip.com/get_memes").then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                console.log(data);
+                // console.log(data);
                 var meme = data.data.memes[Math.floor(Math.random() * 100)];
-                var memeImgEl = document.createElement("img");
                 memeImgEl.setAttribute("src", meme.url);
             })
         }
@@ -38,22 +38,24 @@ var getMeme = function() {
 }
 
 // Get weekday to display in the header
-var getWeekDay = function() {
-    var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var weekValue = new Date();
-    var weekDay = daysOfWeek[weekValue.getDay()];
-    document.getElementById("weekday").innerHTML = weekDay;
+// var getWeekDay = function() {
+//     var daysOfWeek = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+//     var weekValue = new Date();
+//     var weekDay = daysOfWeek[weekValue.getDay()];
+//     document.getElementById("weekday").innerHTML = weekDay;
+// }
+
+// // Get day to display in the header
+// var getDay = function() {
+//     var thisDate = new Date().getDate();
+//     var thisMonth = new Date().getMonth() + 1;
+//     var thisYear = new Date().getFullYear();
+//     document.getElementById("date").innerHTML = thisMonth  + "/" + thisDate + "/" + thisYear;
+// }
+
+var buttonClickHandler = function(event) {
+    getExcuse();
+    getMeme();
 }
 
-// Get day to display in the header
-var getDay = function() {
-    var thisDate = new Date().getDate();
-    var thisMonth = new Date().getMonth() + 1;
-    var thisYear = new Date().getFullYear();
-    document.getElementById("date").innerHTML = thisMonth  + "/" + thisDate + "/" + thisYear;
-}
-
-getWeekDay();
-getDay();
-getExcuse();
-getMeme();
+excuseButtonEl.addEventListener("click", buttonClickHandler);
