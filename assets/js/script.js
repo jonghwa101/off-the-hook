@@ -4,24 +4,29 @@ var excuseHistory = [];
 var memeImgEl = document.querySelector(".meme");
 var excuseButtonEl = document.querySelector("#excuse-btn");
 
+var excuseEl = document.querySelector("#current-excuse");
+var excuseHistoryEl = document.querySelector("#excuse-history");
+
 // Fetch a randomly generated excuse
 var getExcuse = function() {
     fetch("https://excuser.herokuapp.com/v1/excuse").then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                console.log(data);
+                // console.log(data);
+                excuseEl.textContent = data[0].excuse;
                 addToHistory(data[0].id, data[0].excuse);
             })
         }
     })
 }
 
-// Store an excuse in our history array
+// Store an excuse in our history array and update the element on the page
 var addToHistory = function(id, excuse) {
     excuseHistory.push({
         id: id,
         excuse: excuse
     })
+    excuseHistoryEl.value += excuse + '\r\n';
 }
 
 // Use imgflip API to get a randomly generated meme
@@ -45,7 +50,7 @@ var getMeme = function() {
 //     document.getElementById("weekday").innerHTML = weekDay;
 // }
 
-// // Get day to display in the header
+// Get day to display in the header
 // var getDay = function() {
 //     var thisDate = new Date().getDate();
 //     var thisMonth = new Date().getMonth() + 1;
@@ -53,6 +58,7 @@ var getMeme = function() {
 //     document.getElementById("date").innerHTML = thisMonth  + "/" + thisDate + "/" + thisYear;
 // }
 
+// Handle the click of the button to display an excuse and random meme
 var buttonClickHandler = function(event) {
     getExcuse();
     getMeme();
