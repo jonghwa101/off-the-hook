@@ -5,9 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Off The Hook</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" />
+            <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <body>
@@ -46,22 +52,31 @@
         <div class="display">Off the Hook</div>
     </header>
 
-    <main class="container">
-        <div class="yourExcuse">
-            <h2>Your Excuse Is:</h2>
-            <textarea></textarea>
-                <br>
-            <button type="button" class="Btn" id="excuse-btn">Get Your Excuse</button>
-            <img src="" class="meme">
-        </div>
-
+    <main class="container_1">
+   <div class="oth">
+    <div class="oth2">
         <div class="previousExcuses">
-            <h3>Your previous excuses are: </h3>
-            <textarea></textarea>
+            <h6>Your previous excuses are: </h6>
+            <textarea id="excuse-history" style="padding: 15px;" rows="10" cols="30"></textarea>
         </div>
-        
-    </main>
 
+        <div class="yourExcuse">
+            <h6>Your Excuse Is:</h6>
+            <div class="txt more">
+            <textarea id="current-excuse" rows="2" cols="45"></textarea><br> </div>
+
+            <button  type="button" class="uk-button uk-button-default Btn uk-margin-bottom" id="excuse-btn">Get Your Excuse</button>
+
+            
+
+            <div class="imgon">
+                    <img src="" class="meme">
+                </div>
+            </div>
+                
+        </div>
+    </div>
+    </main>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script src="./assets/js/script.js"></script>
