@@ -10,13 +10,128 @@ h1 {
     font-size: 100px;
 }
 
-.Btn {
-    border-left: 1px solid black;
-    border-radius: 10px;
-    background-color: pink;
-}
+
 
 .Btn:hover {
     font-size: 30px;
     transition: all .3s ease-in-out;
 } */
+.display{
+    padding-bottom: 10px;
+padding-left: 17px;
+}
+
+h6{
+padding: 14px;
+
+}
+/*h3{
+font-weight: bold;
+}*/
+.Btn {
+border-left: 1px solid black;
+margin-bottom: 10px;
+}
+.txt{
+    padding: 12px
+
+}
+.more{
+width: 65%;
+margin: 0 auto;
+}
+button{
+    background: none;
+padding: 10px;
+}
+.jumbotron{
+padding: 0;
+border-bottom: 2px solid black;
+}
+
+.yourExcuse{
+    text-align: center;
+width: 70%;
+}
+
+.yourExcuse h6{
+margin:10px auto; 
+margin-bottom: 0px;
+padding-bottom: 10px;
+}
+h6{
+padding: 20px;
+}
+#current-excuse{
+font-weight: bold;
+border: none;
+text-align: center;
+
+}
+.previousExcuses{
+    float: right;
+    width: 28%;
+}
+#excuse-history{
+    height: 200px;
+}
+img{
+    border: 1px solid;
+}
+.imgon{
+text-align: center;
+width: fit-content;
+padding: 0px;
+margin: 0 auto;
+}
+.container_1{
+width: 100%;
+padding-right: 15px;
+padding-left: 15px;
+margin-right: auto;
+margin-left: auto;
+max-width: 80%;
+}
+@media only screen and (max-width: 600px){
+.oth2{
+    text-align: center;
+        display: flex;
+    flex-direction: column-reverse;
+}
+.yourExcuse{
+    width: 100%;
+}
+.more{
+    width: 100%;
+}
+#excuse-history {
+    height: 142px;
+    width: 80% !important;
+    border: 1px solid;
+}
+.imgon{
+        width: 100%;
+}
+.previousExcuses {
+    width: 90%;
+    margin: auto;
+
+}
+#current-excuse{
+        width: 80%;
+}
+h6{
+    font-size: 15px !important;
+    width: fit-content;
+    padding: 0;
+}
+.container_1{
+    max-width: 90%;
+}
+.previousExcuses h6{
+    margin: 10px auto;
+}
+.previousExcuses{
+    padding-bottom: 15px;
+}
+}
