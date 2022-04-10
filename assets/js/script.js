@@ -12,9 +12,13 @@ var getExcuse = function() {
     fetch("https://excuser.herokuapp.com/v1/excuse").then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                // console.log(data);
-                excuseEl.textContent = data[0].excuse;
-                addToHistory(data[0].id, data[0].excuse);
+                if(data[0].excuse == undefined) {
+                    console.log("Undefined encountered!");
+                    getExcuse();
+                } else {
+                    excuseEl.textContent = data[0].excuse;
+                    addToHistory(data[0].id, data[0].excuse);
+                }
             })
         }
     })
@@ -26,8 +30,9 @@ var addToHistory = function(id, excuse) {
         id: id,
         excuse: excuse
     })
-    excuseHistoryEl.value += excuse + '\r\n';
+    excuseHistoryEl.value = "";
     saveHistory();
+    displayHistory();
 }
 
 // Save the excuse history to local storage
@@ -38,15 +43,21 @@ var saveHistory = function() {
 // Load the history of excuses saved in local storage
 var loadHistory = function() {
     excuses = JSON.parse(localStorage.getItem("excuses"));
-    console.log(excuses);
+    if(excuses == null) {
+        excuseHistory = [];
+        return;
+    } else {
+        excuseHistory = excuses;
+    }
+    excuseEl.textContent = excuseHistory[0].excuse;
     displayHistory();
 }
 
 // Display what is currently in the excuse history
 var displayHistory = function() {
     // Display everything in history to the textarea that displays the history
-    for(var i = 0; i < excuses.length; i++) {
-        excuseHistoryEl.value += excuses[i].excuse + '\r\n';
+    for(var i = 0; i < excuseHistory.length; i++) {
+        excuseHistoryEl.value += excuseHistory[i].excuse + '\r\n';
     }
 }
 
