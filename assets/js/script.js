@@ -17,7 +17,7 @@ var getExcuse = function() {
                     getExcuse();
                 } else {
                     excuseEl.textContent = data[0].excuse;
-                    addToHistory(data[0].id, data[0].excuse);
+                    addToHistory(data[0]);
                 }
             })
         }
@@ -25,11 +25,16 @@ var getExcuse = function() {
 }
 
 // Store an excuse in our history array and update the element on the page
-var addToHistory = function(id, excuse) {
-    excuseHistory.unshift({
-        id: id,
-        excuse: excuse
-    })
+var addToHistory = function(excuseObject) {
+    // Check for repeat
+    var index = excuseHistory.map(object => object.id).indexOf(excuseObject.id);
+    console.log(index);
+    // If the index isn't -1, the excuse is a repeat
+    if(index > -1) {
+        excuseHistory.splice(index, 1);
+    }
+    // Check size of excuse history
+    excuseHistory.unshift(excuseObject);
     excuseHistoryEl.value = "";
     saveHistory();
     displayHistory();
@@ -43,10 +48,13 @@ var saveHistory = function() {
 // Load the history of excuses saved in local storage
 var loadHistory = function() {
     excuses = JSON.parse(localStorage.getItem("excuses"));
+    // If there is nothing local saved yet, create an empty array and 
+    // stop running this code.
     if(excuses == null) {
         excuseHistory = [];
         return;
-    } else {
+    } // Otherwise, set the array to whatever was previously stored
+    else {
         excuseHistory = excuses;
     }
     excuseEl.textContent = excuseHistory[0].excuse;
