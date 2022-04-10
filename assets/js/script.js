@@ -22,11 +22,32 @@ var getExcuse = function() {
 
 // Store an excuse in our history array and update the element on the page
 var addToHistory = function(id, excuse) {
-    excuseHistory.push({
+    excuseHistory.unshift({
         id: id,
         excuse: excuse
     })
     excuseHistoryEl.value += excuse + '\r\n';
+    saveHistory();
+}
+
+// Save the excuse history to local storage
+var saveHistory = function() {
+    localStorage.setItem("excuses", JSON.stringify(excuseHistory));
+}
+
+// Load the history of excuses saved in local storage
+var loadHistory = function() {
+    excuses = JSON.parse(localStorage.getItem("excuses"));
+    console.log(excuses);
+    displayHistory();
+}
+
+// Display what is currently in the excuse history
+var displayHistory = function() {
+    // Display everything in history to the textarea that displays the history
+    for(var i = 0; i < excuses.length; i++) {
+        excuseHistoryEl.value += excuses[i].excuse + '\r\n';
+    }
 }
 
 // Use imgflip API to get a randomly generated meme
@@ -64,4 +85,5 @@ var buttonClickHandler = function(event) {
     getMeme();
 }
 
+loadHistory();
 excuseButtonEl.addEventListener("click", buttonClickHandler);
