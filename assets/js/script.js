@@ -33,8 +33,13 @@ var addToHistory = function(excuseObject) {
     if(index > -1) {
         excuseHistory.splice(index, 1);
     }
-    // Check size of excuse history
+    // Check size of excuse history. If it's over 15, remove the oldest item
+    if(excuseHistory.length > 15) {
+        excuseHistory.pop();
+    }
+    // Add the current excuse to the top of the history
     excuseHistory.unshift(excuseObject);
+    // Temporarily clear the textarea to update the display
     excuseHistoryEl.value = "";
     saveHistory();
     displayHistory();
