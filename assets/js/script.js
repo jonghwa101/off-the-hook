@@ -12,12 +12,16 @@ var getExcuse = function() {
     fetch("https://excuser.herokuapp.com/v1/excuse").then(function(response) {
         if(response.ok) {
             response.json().then(function(data) {
-                if(data[0].excuse == undefined) {
-                    console.log("Undefined encountered!");
-                    getExcuse();
+                if (excuseHistory.indexOf(data[0].excuse) == -1) {
+                    if(data[0].excuse == undefined) {
+                        console.log("Undefined encountered!");
+                        getExcuse();
+                    } else {
+                        excuseEl.textContent = data[0].excuse;
+                        addToHistory(data[0]);
+                    }
                 } else {
-                    excuseEl.textContent = data[0].excuse;
-                    addToHistory(data[0]);
+                    getExcuse();
                 }
             })
         }
@@ -70,7 +74,7 @@ var loadHistory = function() {
 var displayHistory = function() {
     // Display everything in history to the textarea that displays the history
     for(var i = 0; i < excuseHistory.length; i++) {
-        excuseHistoryEl.value += excuseHistory[i].excuse + '\r\n';
+        excuseHistoryEl.value += excuseHistory[i].excuse + '\r\n\n';
     }
 }
 
