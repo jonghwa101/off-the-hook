@@ -40,9 +40,11 @@ margin-bottom: 10px;
 width: 65%;
 margin: 0 auto;
 }
-button{
+
+.button{
     background: none;
 padding: 10px;
+margin: 10px;
 }
 .jumbotron{
 padding: 0;
