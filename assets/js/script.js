@@ -23,6 +23,7 @@ var getExcuse = function() {
                         // If the copy button isn't already there, create it.
                         if(!document.querySelector("#copy-button")) {
                             var copyButtonEl = document.createElement("button");
+                            copyButtonEl.setAttribute("class","button");
                             copyButtonEl.textContent = "Copy to Clipboard";
                             copyButtonEl.setAttribute("id", "copy-button");
                             textEl.appendChild(copyButtonEl);

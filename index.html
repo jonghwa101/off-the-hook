@@ -5,8 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Off The Hook</title>
-            <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" />
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- UIkit CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.13.7/dist/css/uikit.min.css" />
@@ -17,56 +15,23 @@
 </head>
 
 <body>
-    <!-- <header class="jumbotron">
-        <h1>Off the Hook</h1>
-        <div>
-            <h3 id="weekday"></h3>
-            <h3 id="date"></h3>
-        </div>
-    </header>
-
-    <main class="container" id="time-container">
-        <div class="row">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <div class="input-group-text hour">9:00AM</div>
-              </div>
-              <textarea class="form-control" id="9"></textarea>
-              <button type="button" class="Btn">Excuse!</button>
-            </div>
-        </div> 
-        
-        <div class="row">
-            <p>Time</p>
-            <p>Excuse</p>
-            <button type="button" class="Btn">Excuse!</button>
-        </div>
-    </main>
-
-    <div id="history">
-        <p>Excuse History Example 1</p>
-        <p>Excuse History Example 2</p>
-    </div> -->
 
     <header class="jumbotron">
-        <div class="display">Off the Hook</div>
+        <h1 class="display">Off the Hook</h1>
     </header>
 
     <main class="container_1">
    <div class="oth">
     <div class="oth2">
         <div class="previousExcuses">
-            <h6>Your previous excuses are: </h6>
+            <h3 style="padding:25px">Your previous excuses are: </h3>
             <textarea id="excuse-history" style="padding: 15px;" rows="10" cols="30"></textarea>
         </div>
 
         <div class="yourExcuse">
-            <h6>Your Excuse Is:</h6>
+            <h3 id="excuseinfo">Your Excuse Is:</h3>
             
             <button  type="button" class="uk-button uk-button-default Btn uk-margin-bottom" id="excuse-btn">Get Your Excuse</button>
-
-            
-
             <div class="imgon" >
                 <div class="txt more">
                     <textarea id="current-excuse" rows="2" cols="45"></textarea><br> </div>

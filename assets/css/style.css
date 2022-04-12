@@ -16,9 +16,15 @@ h1 {
     font-size: 30px;
     transition: all .3s ease-in-out;
 } */
+#excuseinfo {
+    padding: 25px;
+}
+
 .display{
-    padding-bottom: 10px;
-padding-left: 17px;
+padding: 25px;
+padding-left: 50px;
+color:white;
+
 }
 
 h6{
@@ -49,6 +55,7 @@ margin: 10px;
 .jumbotron{
 padding: 0;
 border-bottom: 2px solid black;
+background-color: grey;
 }
 
 .yourExcuse{
@@ -137,3 +144,9 @@ h6{
     padding-bottom: 15px;
 }
 }
+
+#excuse-btn:hover{
+    background-color: grey;
+    color: white;
+}
+
