@@ -6,6 +6,7 @@ var excuseButtonEl = document.querySelector("#excuse-btn");
 
 var excuseEl = document.querySelector("#current-excuse");
 var excuseHistoryEl = document.querySelector("#excuse-history");
+var textEl = document.querySelector(".txt");
 
 // Fetch a randomly generated excuse
 var getExcuse = function() {
@@ -19,6 +20,14 @@ var getExcuse = function() {
                     } else {
                         excuseEl.textContent = data[0].excuse;
                         addToHistory(data[0]);
+                        // If the copy button isn't already there, create it.
+                        if(!document.querySelector("#copy-button")) {
+                            var copyButtonEl = document.createElement("button");
+                            copyButtonEl.textContent = "Copy to Clipboard";
+                            copyButtonEl.setAttribute("id", "copy-button");
+                            textEl.appendChild(copyButtonEl);
+                            copyButtonEl.addEventListener("click", copyExcuse);
+                        }
                     }
                 } else {
                     getExcuse();
@@ -89,6 +98,20 @@ var getMeme = function() {
             })
         }
     })
+}
+
+// Copy the currently displayed exucse to the clipboard
+var copyExcuse = function() {
+    var copyText = excuseEl;
+
+    /* Select the text field */
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); /* For mobile devices */
+    console.log(copyText);
+
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText.value);
+    console.log("Copied");
 }
 
 // Get weekday to display in the header
