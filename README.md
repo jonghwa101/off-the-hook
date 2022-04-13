@@ -19,7 +19,7 @@ The previous excuses will not be reused as long as they remain in localstorage.
 https://jonghwa101.github.io/off-the-hook/ .
 
 ## Screenshot
-Screenshot: ![alt text](filenav "Deployed Application")
+![groupscreenshot](https://user-images.githubusercontent.com/85321444/163284766-0b438f68-3555-4aca-aad8-9b07e340009f.jpg)
 
 ## Contributions
 Created and Optimized by Jongwha Choe, Jeffrey Wang, Kevin Parrinello, Amanda Coughlin, and Thomas McGovern
